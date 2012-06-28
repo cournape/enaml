@@ -5,19 +5,19 @@ python:
   - 2.6
   - 2.7
 before_install:
-  - mkdir builds
-  - pushd builds
   - sudo apt-get update
   - sudo apt-get install python-wxgtk2.8
-  - deactivate
   # Cython.Distutils is broken on setuptools but not on distribute. We need to
   # install distribute and cython separately to make sure it is picked up
   # thereafter for evey pip incantation
+  - mkdir builds
+  - pushd builds
+  - deactivate
   - virtualenv --system-site-packages --distribute $PWD/.env;
     source $PWD/.env/bin/activate;
+  - popd
   - pip install Cython>=0.15.1
   - pip install -r requirements.txt
-  - popd
 install:
   - python setup.py install
 script:
