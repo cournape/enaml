@@ -1,3 +1,4 @@
+cython>=0.15.1
 traits
 casuarius
 ply
