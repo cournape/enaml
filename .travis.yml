@@ -6,7 +6,7 @@ python:
   - 2.7
 before_install:
   - sudo apt-get update
-  - sudo apt-get install python-wxgtk2.8
+  - sudo apt-get install python-wxgtk2.8 python-pyside
   # Cython.Distutils is broken on setuptools but not on distribute. We need to
   # install distribute and cython separately to make sure it is picked up
   # thereafter for evey pip incantation
